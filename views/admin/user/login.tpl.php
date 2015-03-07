@@ -6,21 +6,20 @@
 <body>
 
 <form name="login" method="POST" action="">
-<?php if(isset($error) && $error == true): ?>
-<p style="color:red;">Sai Tài khoản hoặc Mật khẩu!</p>
-<?php endif; ?>
-
-<p>
-<label>Tài khoản:</label>
-<input type="text" name="username" value="" />
-</p>
-<p>
-<label>Mật khẩu:</label>
-<input type="password" name="password" value="" />
-</p>
-<p>
-<input type="submit" value="Đăng nhập" />
-</p>
+	<?php if(isset($error) && $error == true): ?>
+	<p style="color:red;">Sai Tài khoản hoặc Mật khẩu!</p>
+	<?php endif; ?>
+	<p>
+	<label>Tài khoản:</label>
+	<input type="text" name="username" value="" />
+	</p>
+	<p>
+	<label>Mật khẩu:</label>
+	<input type="password" name="password" value="" />
+	</p>
+	<p>
+	<input type="submit" value="Đăng nhập" />
+	</p>
 </form>
 </body>
 </html>
