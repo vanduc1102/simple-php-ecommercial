@@ -15,7 +15,7 @@
 		//Query và return
 		return mysql_query($sql);
 	}
-	
+
 	function get_category_by_id($category_id){
 		//SQL
 		$sql = "SELECT * FROM tbl_category WHERE category_id = $category_id";
@@ -30,6 +30,14 @@
 	function edit_category($data, $category_id){
 		//SQL
 		$sql = "UPDATE tbl_category SET name = '{$data['name']}', status = {$data['status']}, modified = '{$data['modified']}' WHERE category_id = $category_id";
+
+		//Query và return
+		return mysql_query($sql);
+	}
+
+	function delete_category($category_id){
+		//SQL
+		$sql = "DELETE FROM tbl_category WHERE category_id = $category_id";
 
 		//Query và return
 		return mysql_query($sql);
