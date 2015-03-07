@@ -23,4 +23,31 @@
 		//Query và return
 		return mysql_query($sql);
 	}
+
+	function get_user_by_id($user_id){
+		//SQL
+		$sql = "SELECT * FROM tbl_user WHERE user_id = $user_id";
+
+		//Query
+		$query = mysql_query($sql);
+
+		//Fetch và return
+		return mysql_fetch_assoc($query);
+	}
+
+	function edit_user($data, $user_id){
+		//SQL
+		$sql = "UPDATE tbl_user SET username = '{$data['username']}', fullname = '{$data['fullname']}', email = '{$data['email']}', status = {$data['status']}, modified = '{$data['modified']}'";
+
+		//Nếu có cập nhật mật khẩu
+		if($data['password'] != null){
+			$sql .= ", password = '{$data['password']}'";
+		}
+
+		//Điều kiện
+		$sql .= " WHERE user_id = $user_id";
+		echo($sql);
+		//Query và return
+		return mysql_query($sql);
+	}
 ?>
