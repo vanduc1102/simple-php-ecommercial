@@ -50,4 +50,11 @@
 		//Query và return
 		return mysql_query($sql);
 	}
+	function delete_user($user_id){
+		//SQL
+		$sql = "DELETE FROM tbl_user WHERE user_id = $user_id";
+
+		//Query và return
+		return mysql_query($sql);
+	}
 ?>
